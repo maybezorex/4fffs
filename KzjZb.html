@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiktok Trick</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #e0e0e0;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    }
+
+    .text-box {
+      background: rgba(48, 47, 47, 0.1);
+      padding: 20px 30px;
+      border-radius: 15px;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      user-select: all;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      max-width: 500px;
+    }
+
+    button {
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #333333, #555555);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.3s ease, transform 0.3s;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #777777, #999999);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .text-box {
+        font-size: 1.2rem;
+      }
+
+      button {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>if u put this in any tiktok video in comments the vid gets deleted in 24-78h</h1>
+
+  <div class="text-box" id="textToCopy">
+    እንኳን ደህና መጣህ እንኳን ደህና እንኳ ደህ መጣህ እንኳን ደህና መጣህ እንኳን ደህና መጣህ እንኳን ደህና መጣህ እንኳን ደህና መጣህ መጣህ እንኳን ደህና መጣህ እንኳን ደህና መጣህ እንኳን ደ
+  </div>
+
+  <button onclick="copyText()">Copy Text</button>
+
+  <script>
+    function copyText() {
+      const text = document.getElementById('textToCopy').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Text copied!');
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+      });
+    }
+  </script>
+
+</body>
+</html>
